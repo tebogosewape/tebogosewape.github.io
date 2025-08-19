@@ -1,172 +1,499 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tebogo Sewape • Portfolio CV</title>
+  <meta name="description" content="Tebogo Sewape CV/Portfolio – projects, experience, skills, and contact." />
+  <meta property="og:title" content="Tebogo Sewaper • Portfolio CV" />
+  <meta property="og:description" content="Projects, achievements, skills, and contact." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root{
+      /* Palette from earlier */
+      --primary-900:#0C1B33; /* Deep Navy */
+      --primary-700:#12264A;
+      --passion:#E63946;     /* Passion Red */
+      --accent-blue:#3A86FF; /* Electric Blue */
+      --accent-orange:#FF7F11; /* Vibrant Orange */
+      --bg:#F7F7F7;          /* Off White */
+      --text:#1E1E1E;        /* Charcoal */
+      --muted:#6B7280;       /* Cool Gray */
+      --chip-bg:rgba(58,134,255,.08);
+      --radius:1.1rem;
+      --shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+    body{background:var(--bg);color:var(--text);}    
+    .navbar{background:var(--primary-900);}    
+    .navbar .nav-link,.navbar-brand{color:#fff !important}
+    .btn-primary{background:var(--accent-blue);border-color:var(--accent-blue)}
+    .btn-outline-primary{border-color:var(--accent-blue);color:var(--accent-blue)}
+    .btn-danger{background:var(--passion);border-color:var(--passion)}
+    .section{padding:4rem 0}
+    .bg-navy{background:var(--primary-900);color:#fff}
+    .text-accent{color:var(--accent-blue)}
+    .text-passion{color:var(--passion)}
+    .badge-skill{background:var(--chip-bg);color:var(--accent-blue);border:1px solid rgba(58,134,255,.25);padding:.6rem .8rem;border-radius:999px;font-weight:600;margin:.25rem;}
+    .card{border:0;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card-title{font-weight:700}
+    .divider{height:2px;background:linear-gradient(90deg,var(--accent-blue),var(--accent-orange));opacity:.3}
+    .hero-title{font-size:clamp(2rem,4vw,3.5rem);font-weight:800}
+    .hero-sub{font-size:clamp(1rem,2vw,1.25rem);color:#dbe6ff}
+    .avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;border:4px solid var(--accent-orange);}
+    .pill{display:inline-flex;align-items:center;gap:.5rem;background: #0f134e;border:1px solid #e6e6e6;padding:.5rem .8rem;border-radius:999px}
+    .timeline{position:relative;padding-left:1.5rem}
+    .timeline::before{content:"";position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent-blue),var(--accent-orange))}
+    .timeline-item{position:relative;margin-bottom:1.5rem}
+    .timeline-item::before{content:"";position:absolute;left:-.05rem;top:.4rem;width:.8rem;height:.8rem;border-radius:50%;background:var(--accent-blue);box-shadow:0 0 0 3px #fff}
+    .rating i{color:var(--accent-orange)}
+    .link-muted{color:var(--muted)}
+    .sticky-cta{position:fixed;right:1rem;bottom:1rem;z-index:1030}
+    /* Print for PDF */
+    @media print{
+      .navbar,.sticky-cta,.no-print{display:none !important}
+      body{background:#fff}
+      .section{padding:1.2rem 0}
+      a[href]:after{content:" (" attr(href) ")";font-size:.8em}
+    }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title>Tebogo Sewape</title>
-    <style>
-/*
- * Globals
- */
-
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
-}
-
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  background-color: #333;
-}
-
-body {
-  display: -ms-flexbox;
-  display: flex;
-  color: #fff;
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-}
-
-.cover-container {
-  max-width: 42em;
-}
-
-
-/*
- * Header
- */
-.masthead {
-  margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  color: rgba(255, 255, 255, .5);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Tebogo Sewape",
+    "jobTitle":"Senior Full-StaclSoftware Developer",
+    "email":"mailto:me@tebogosewape.online",
+    "url":"https://tebogosewape.online",
+    "sameAs":["https://www.linkedin.com/in/yourhandle","https://github.com/yourhandle"]
   }
-  .nav-masthead {
-    float: right;
-  }
-}
+  </script>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Primary Navigation">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home"><i class="fa-solid fa-code"></i> Tebogo Sewape</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certs">Certs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-
-/*
- * Cover
- */
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: 700;
-}
-
-
-/*
- * Footer
- */
-.mastfoot {
-  color: rgba(255, 255, 255, .5);
-}
-      
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">Tebogo Sewape</h3>
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">Projects</a>
-        <a class="nav-link" href="#">Contact</a>
-      </nav>
+  <!-- HERO -->
+  <header id="home" class="section bg-navy">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-8">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img 
+              src="https://media.licdn.com/dms/image/v2/C5603AQHd8_SW_qctPg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1562855202747?e=1758758400&v=beta&t=05C18VVEeXOZh8AmxBI_74krMzkr-BYp1WwhddhWgOc" 
+              alt="Profile photo" 
+              class="avatar d-none d-md-block" />
+            <div>
+              <h1 class="hero-title mb-1">Full Stack Developer</h1>
+              <p class="hero-sub mb-2">Senior Developer • Node.js • React • C# • AWS</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="pill"><i class="fa-solid fa-location-dot"></i> Johannesburg, ZA</span>
+                <span class="pill"><i class="fa-solid fa-briefcase"></i> Open to Contract</span>
+                <span class="pill"><i class="fa-solid fa-envelope"></i> me@tebogosewape.online</span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+            <a class="btn btn-outline-primary" href="#projects"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
+            <button class="btn btn-danger no-print" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Download PDF</button>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card bg-dark text-light border-0">
+            <div class="card-body">
+              <h5 class="card-title">At a Glance</h5>
+              <ul class="list-unstyled small mb-0">
+                <li class="mb-2"><i class="fa-solid fa-circle-check text-accent me-2"></i> 12+ years building APIs, mobile & web apps</li>
+                <li class="mb-2"><i class="fa-solid fa-circle-check text-accent me-2"></i> Led teams of engineers</li>
+                <li class="mb-2"><i class="fa-solid fa-circle-check text-accent me-2"></i> Domain: Fintech, SIM distribution, retail</li>
+                <li class="mb-2"><i class="fa-solid fa-circle-check text-accent me-2"></i> Strengths: delivery, security, DX</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main role="main" class="inner cover">
-    <h1 class="cover-heading">Welcome to my portfolio.</h1>
-    <p class="lead">Still working on my page, should be updated soon...</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-    </p>
-  </main>
+  <div class="divider"></div>
 
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p>Something somthing <a href="/">Tebogo Sewape</a>.</p>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7">
+          <h2 class="fw-bold mb-3">About</h2>
+          <p class="lead">Senior full‑stack developer focused on robust APIs, clean architecture, and measurable outcomes. I love simplifying complex systems and mentoring teams.</p>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h6 class="text-muted">Core Focus</h6>
+                  <p class="mb-0">Node.js (NestJS), React/Expo, C#/.NET, MySQL & MSSQL, Docker, CI/CD, security hardening.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h6 class="text-muted">What I’m Looking For</h6>
+                  <p class="mb-0">Product-minded teams that value ownership, reliability, and user impact.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h6 class="text-muted mb-2">Keywords for Recruiters</h6>
+              <div class="d-flex flex-wrap">
+                <span class="badge-skill">NestJS</span>
+                <span class="badge-skill">React</span>
+                <span class="badge-skill">Expo</span>
+                <span class="badge-skill">C#</span>
+                <span class="badge-skill">MySQL</span>
+                <span class="badge-skill">MSSQL</span>
+                <span class="badge-skill">Docker</span>
+                <span class="badge-skill">RabbitMQ</span>
+                <span class="badge-skill">Prometheus/Grafana</span>
+                <span class="badge-skill">JWT</span>
+                <span class="badge-skill">RBAC</span>
+                <span class="badge-skill">CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
-</div>
+  </section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+  <!-- SKILLS -->
+  <section id="skills" class="section bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Languages & Frameworks</h5>
+              <div class="d-flex flex-wrap mb-3">
+                <span class="badge-skill">TypeScript</span>
+                <span class="badge-skill">Node.js</span>
+                <span class="badge-skill">NestJS</span>
+                <span class="badge-skill">React</span>
+                <span class="badge-skill">Expo</span>
+                <span class="badge-skill">C#/.NET</span>
+                <span class="badge-skill">PHP/Laravel</span>
+              </div>
+              <div class="rating" aria-label="Proficiency (out of 5)">
+                <strong>Backend:</strong> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                <br/>
+                <strong>Frontend:</strong> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Platforms & Tools</h5>
+              <div class="d-flex flex-wrap mb-3">
+                <span class="badge-skill">Docker</span>
+                <span class="badge-skill">RabbitMQ</span>
+                <span class="badge-skill">Grafana</span>
+                <span class="badge-skill">Prometheus</span>
+                <span class="badge-skill">NGINX</span>
+                <span class="badge-skill">Bitbucket Pipelines</span>
+                <span class="badge-skill">GitHub Actions</span>
+              </div>
+              <p class="mb-0 small text-muted">Security: JWT, RBAC, rate limiting, input validation, OWASP controls.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE (timeline) -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between flex-wrap gap-2">
+                <div>
+                  <h5 class="mb-1">Senior Software Developer <span class="text-accent">• Hello Group</span></h5>
+                  <span class="link-muted">2019 — Present · Pretoria Centurion · Dev</span>
+                </div>
+                <div class="text-end">
+                  <span class="badge text-bg-light">Fintech</span>
+                </div>
+              </div>
+              <ul class="mt-3 mb-0">
+                <li>Designed NestJS microservices with RabbitMQ; <strong>reduced latency by 40%</strong>.</li>
+                <li>Implemented Prometheus metrics & Grafana dashboards; <strong>P95 reduced to 350ms</strong>.</li>
+                <li>Hardened auth with JWT + RBAC, rate limits, and structured logging.</li>
+                <li>Mantain PHP and C# legecy code for sim card distribution and allocation.</li>
+                <li>Build and mantail a node / typescript Value Add Serive microservice to manage airtime / data / electricty / bill payments / cash-in / cash-out wallet managenent.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between flex-wrap gap-2">
+                <div>
+                  <h5 class="mb-1">Full‑stack Developer <span class="text-accent">• RestRive</span></h5>
+                  <span class="link-muted">2013 — 2019 · Pretoria</span>
+                </div>
+                <div class="text-end">
+                  <span class="badge text-bg-light">Retail / Logistics</span>
+                </div>
+              </div>
+              <ul class="mt-3 mb-0">
+                <li>Built Angular / Ionic app and PHP / Laravel APIs consumed by 1k+ daily users.</li>
+                <li>We build a phonegap PELP app for the android app store as a panic button app.</li>
+                <li>We build a phonegap Ariel APP for gated home.</li>
+                <li>We build a phonegap Ariel APP for gated home.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / CASE STUDIES -->
+  <section id="projects" class="section bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Featured Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5 class="card-title mb-0">Household Expense Tracker</h5>
+                <span class="badge text-bg-warning">React/Expo</span>
+              </div>
+              <p class="mt-2">Mobile app for South African households with offline-first scanning and secure JWT auth.</p>
+              <ul class="small mb-3">
+                <li>Reduced manual tracking by <strong>~6 hrs/user/month</strong>.</li>
+                <li>Implemented role-based access and encrypted storage.</li>
+              </ul>
+              <a class="btn btn-sm btn-outline-primary" href="#" aria-label="Open case study of Expense Tracker">Case Study</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5 class="card-title mb-0">SIM Distribution Tools</h5>
+                <span class="badge text-bg-info">PHP / Laravel / NestJS / C#</span>
+              </div>
+              <p class="mt-2">APIs for SIM activation, stock tracking, and airtime transactions with observability.</p>
+              <ul class="small mb-3">
+                <li>P95 latency <strong>&lt; 400ms</strong> across core endpoints.</li>
+                <li>Grafana dashboards for retries, status codes, and top failing serials.</li>
+              </ul>
+              <a class="btn btn-sm btn-outline-primary" href="#">Case Study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT METRICS / HIGHLIGHTS -->
+  <section id="impact" class="section">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Impact & Highlights</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <div class="display-6 text-passion fw-bold">40%</div>
+              <p class="mb-0">Latency reduction after service refactor</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <div class="display-6 text-accent fw-bold">99.95%</div>
+              <p class="mb-0">Uptime maintained over 12 months</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <div class="display-6 fw-bold" style="color:var(--accent-orange)">8</div>
+              <p class="mb-0">Engineers mentored to mid/senior</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS, AWARDS, SPEAKING -->
+  <section id="certs" class="section bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Certifications & Recognition</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Certifications</h5>
+              <ul class="mb-0">
+                <li>Hello Group outstanding performer (2020)</li>
+                <li>IBM DB2 fundamentals (2013)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Speaking & Community</h5>
+              <ul class="mb-0">
+                <li>(Hello Group) Tech talk: <em>Vite vs CRA – Modern Frontend Velocity</em> (2025)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Testimonials</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <blockquote class="mb-0">“Delivered on time and raised our engineering bar. We leaned on him for the toughest problems.”
+                <footer class="blockquote-footer mt-2">Engineering Manager, Fintech</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <blockquote class="mb-0">“Turned vague requirements into a reliable product. Excellent communicator.”
+                <footer class="blockquote-footer mt-2">Product Lead, Retail</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Education</h2>
+      <div class="card">
+        <div class="card-body d-flex justify-content-between flex-wrap gap-2">
+          <div>
+            <h5 class="mb-1">Diploma in Software Engineering</h5>
+            <span class="link-muted">Tshwane Univerity of Technology · 2006 — 2009</span>
+          </div>
+          <div class="text-end">
+            <span class="badge text-bg-light">Dean’s List</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="fw-bold mb-3">Let’s Work Together</h2>
+      <p class="text-muted">Prefer email? <a href="mailto:you@example.com">me@tebogosewape.online</a>. I typically reply within 1 business day.</p>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <form class="card p-3" onsubmit="event.preventDefault(); alert('Thanks! I will reply shortly.');">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name</label>
+                <input class="form-control" required placeholder="Your name" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" required placeholder="you@company.com" />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="4" required placeholder="Tell me about the role or project…"></textarea>
+              </div>
+              <div class="col-12 d-flex gap-2">
+                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
+                <a class="btn btn-outline-primary" href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a class="btn btn-outline-primary" href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Recruiter Notes</h5>
+              <ul class="small mb-0">
+                <li>Location: Pretoria / Johannesburg (Hybrid/Remote)</li>
+                <li>Availability: 1 Month’ notice</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta no-print">
+    <a href="#contact" class="btn btn-primary btn-lg shadow"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </div>
+
+  <footer class="py-4 bg-navy">
+    <div class="container text-center small">© <span id="year"></span> Tebogo Sewaoe • Build with Love By <a href="https://northernrains.tech">Northern Rains</a></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
